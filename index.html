@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Foto dalam Hati</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&family=Bangers&family=Fragment+Mono:ital@0;1&family=Russo+One&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        background: black;
+      }
+      .kotak p {
+        font-size: clamp(12px, 1vw, 150px);
+      }
+      .kotak span {
+        font-size: clamp(12px, 2vw, 152px);
+      }
+      .colum h1 {
+        font-size: clamp(4px, 6vw, 208px);
+      }
+
+      .content {
+        background: #808080;
+      }
+      .utama {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 5%;
+        z-index: 2;
+      }
+      .gambar-border {
+        width: 100%;
+        height: 100vh; /* penuh setinggi layar */
+        object-fit: cover; /* isi penuh tanpa distorsi */
+        display: block; /* hilangkan spasi bawah */
+      }
+
+      .thumnel svg {
+        position: absolute;
+        top: 40%;
+        left: 10%;
+        z-index: 10;
+      }
+      .kotak {
+        top: 63%;
+        left: 50%;
+        width: 40%;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.849);
+        border-radius: 100px;
+        transform: translateX(-50%);
+        z-index: 10;
+      }
+      .kotak p {
+        margin: 0;
+        font-family: 'Alkatra', system-ui;
+        text-align: center;
+        font-weight: bold;
+      }
+      .kotak span {
+        display: block;
+        text-align: center;
+        font-family: 'Fragment Mono', monospace;
+        font-weight: bold;
+      }
+      .colum {
+        top: 78%;
+        left: 50%;
+        width: 30%;
+        border: 4px solid transparent;
+        position: absolute;
+        border-radius: 100px;
+        transform: translateX(-50%);
+        z-index: 10;
+        overflow: hidden;
+      }
+
+      .colum::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 950px;
+        top: -19%;
+        background: linear-gradient(red, yellow);
+        animation: rotate 4s linear infinite;
+        z-index: -11;
+      }
+      .colum::after {
+        content: '';
+        position: absolute;
+        background: #021c9e;
+        inset: 5px;
+        border-radius: 16px;
+        z-index: -11;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      a {
+        color: rgb(255, 255, 255);
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+      }
+      .colum img {
+        width: 10%;
+        height: 10%;
+      }
+
+      .logo {
+        background: #6cb86a;
+      }
+
+      .heart {
+        width: 240px;
+        display: block;
+        margin: 40px auto;
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+      }
+      @media (max-width: 768px) {
+        body {
+          background: rebeccapurple;
+        }
+        .kotak {
+          top: 77%;
+          width: 40%;
+          padding-top: 5px;
+          padding-bottom: 3px;
+        }
+        .colum {
+          top: 83%;
+          width: 35%;
+          gap: 8px;
+        }
+        .colum h1 {
+          font-size: 15px;
+        }
+        .colum::before {
+          content: '';
+          height: 90px;
+          animation: rotate 5s linear infinite;
+        }
+        .colum::after {
+          content: '';
+          inset: 2px;
+        }
+
+        .thumnel svg {
+          top: 17%;
+        }
+      }
+      @media (max-width: 600px) {
+        body {
+          background: rebeccapurple;
+        }
+        .kotak {
+          top: 75%;
+          width: 40%;
+          padding-top: 5px;
+          padding-bottom: 3px;
+        }
+        .colum {
+          top: 85%;
+          width: 35%;
+          gap: 8px;
+        }
+        .colum h1 {
+          font-size: 15px;
+        }
+        .colum::before {
+          content: '';
+          height: 90px;
+          animation: rotate 5s linear infinite;
+        }
+        .colum::after {
+          content: '';
+          inset: 2px;
+        }
+
+        .thumnel svg {
+          top: 17%;
+        }
+      }
+      @media (max-width: 545px) {
+        body {
+          margin: 0;
+        }
+        .kotak {
+          top: 73%;
+        }
+        .colum {
+          top: 84%;
+          width: 40%;
+          gap: 8px;
+        }
+        .thumnel svg {
+          top: 17%;
+          left: 10%;
+        }
+      }
+      @media (max-width: 455px) {
+        body {
+          margin: 0;
+        }
+        .thumnel svg {
+          top: 15%;
+        }
+        .kotak {
+          top: 68%;
+          width: 37;
+        }
+        .colum {
+          top: 80%;
+          width: 40%;
+          gap: 8px;
+        }
+        .colum h1 {
+          font-size: 14px;
+        }
+      }
+      @media (max-width: 390px) {
+        body {
+          margin: 0;
+        }
+        .thumnel svg {
+          top: 15%;
+        }
+        .kotak {
+          top: 66%;
+          width: 47%;
+        }
+        .colum {
+          top: 80%;
+          width: 40%;
+          gap: 8px;
+        }
+        .colum h1 {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="utama">
+      <img class="gambar-border" src="Frame 7.svg" alt="Gambar vektor" />
+      <div class="thumnel">
+        <svg width="80%" height="80vh" viewBox="0 0 721 545" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- Definisikan clipPath dengan path yang kamu punya -->
+            <clipPath id="shapeClip">
+              <path
+                d="M522.883 62.0645C474.483 53.2645 394.05 17.3978 360.383 0.564514C307.983 29.3645 235.883 52.2312 206.383 60.0645C202.383 62.0645 143.883 72.5645 71.3834 116.565C9.38342 151.565 0.216749 203.898 1.38341 226.565C0.716746 309.565 -0.216588 482.465 1.38341 510.065C2.98341 537.664 28.0501 543.898 40.3834 543.565H684.383C711.183 543.565 719.217 520.565 719.883 509.065V226.565C719.883 166.165 675.883 133.911 649.383 115.565C629.883 102.065 578.883 76.0645 522.883 62.0645Z"
+              />
+            </clipPath>
+          </defs>
+
+          <!-- Gambar yang akan dipotong -->
+          <image href="kh3.jpg" width="721" height="645" y="-65" clip-path="url(#shapeClip)" preserveAspectRatio="xMidYMin slice" />
+
+          <!-- Opsional: outline shape -->
+          <path
+            d="M522.883 62.0645C474.483 53.2645 394.05 17.3978 360.383 0.564514C307.983 29.3645 235.883 52.2312 206.383 60.0645C202.383 62.0645 143.883 72.5645 71.3834 116.565C9.38342 151.565 0.216749 203.898 1.38341 226.565C0.716746 309.565 -0.216588 482.465 1.38341 510.065C2.98341 537.664 28.0501 543.898 40.3834 543.565H684.383C711.183 543.565 719.217 520.565 719.883 509.065V226.565C719.883 166.165 675.883 133.911 649.383 115.565C629.883 102.065 578.883 76.0645 522.883 62.0645Z"
+            fill="none"
+            stroke="#fff"
+            stroke-width="5"
+          />
+        </svg>
+        <div class="kotak">
+          <p>Bersama :</p>
+          <span>KH MUSLEH ADNAN</span>
+        </div>
+      </div>
+      <a href="cover/cover.html" class="colum"
+        ><img src="email.png" alt="" />
+        <h1>Buka Undangan</h1></a
+      >
+    </div>
+  </body>
+</html>
