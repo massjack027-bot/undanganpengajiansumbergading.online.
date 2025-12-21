@@ -1,4 +1,4 @@
-const tanggalTujuan = new Date('Dec 22, 2025 23:00:00').getTime();
+const tanggalTujuan = new Date('Dec 22, 2025 18:30:00').getTime();
 
 const hitungMundur = setInterval(function () {
   const sekarang = new Date().getTime();
@@ -58,3 +58,4 @@ const navUl = document.querySelector('nav ul');
 menuToggle.addEventListener('click', function () {
   navUl.classList.toggle('show'); // tambahkan/hapus class .show
 });
+
